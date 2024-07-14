@@ -1,0 +1,8 @@
+FROM node:22 as base
+
+COPY ./docker_scripts/ /usr/src/db/
+WORKDIR /usr/src/db
+RUN 
+RUN sh ./turso_install.sh
+
+ENTRYPOINT [ "sh", "./db_start.sh" ]
